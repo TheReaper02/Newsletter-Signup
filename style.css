@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root {
+    --primary-red: hsl(4, 100%, 67%);
+    --blue-800: hsl(234, 29%, 20%);
+    --blue-700: hsl(235, 18%, 26%);
+    --grey: hsl(0, 0%, 58%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: var(--blue-800);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+}
+
+:focus-visible {
+    outline: 3px solid var(--blue-800);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.signup-section {
+    background-color: var(--white);
+    border-radius: 2.25rem;
+    display: flex;
+    width: 100%;
+    max-width: 58rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.28);
+}
+
+.content-panel {
+    flex: 1;
+    padding: 3.625rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.content-panel h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--blue-800);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+}
+
+.content-panel p {
+    font-size: 1rem;
+    color: var(--blue-800);
+    margin-bottom: 1.5rem;
+}
+
+.feature-list {
+    list-style: none;
+    margin-bottom: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    font-size: 1rem;
+    color: var(--blue-800);
+}
+
+.feature-list li img {
+    flex-shrink: 0;
+    width: 1.3125rem;
+    height: 1.3125rem;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 1.25rem;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.signup-form label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--blue-800);
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+}
+
+.error-message {
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--primary-red);
+    display: none;
+}
+
+.error-message[aria-hidden="false"] {
+    display: block;
+}
+
+.email-input {
+    width: 100%;
+    padding: 1.125rem 1.5rem;
+    border: 1.5px solid var(--grey);
+    border-radius: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--blue-800);
+    background-color: var(--white);
+    outline: none;
+    transition: border-color 0.18s ease;
+    cursor: text;
+    margin-bottom: 2rem;
+}
+
+.email-input::placeholder {
+    color: var(--grey);
+}
+
+.email-input:focus-visible {
+    outline: 3px solid var(--blue-800);
+    outline-offset: 2px;
+    border-color: var(--blue-800);
+}
+
+.email-input[aria-invalid="true"] {
+    border-color: var(--primary-red);
+    background-color: #fff4f3;
+    color: var(--primary-red);
+}
+
+.email-input[aria-invalid="true"]::placeholder {
+    color: var(--primary-red);
+    opacity: 0.6;
+}
+
+.btn {
+    width: 100%;
+    padding: 1.125rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--blue-800);
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    min-height: 2.75rem;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #ff6257 0%, #ff5476 100%);
+    box-shadow: 0 0.75rem 2.5rem rgba(255, 98, 87, 0.35);
+    color: var(--white);
+}
+
+.btn:active {
+    transform: scale(0.985);
+}
+
+.illustration-panel {
+    width: 25rem;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.illustration-panel img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.illustration-mobile {
+    display: none;
+}
+
+.success-section {
+    display: none;
+    background-color: var(--white);
+    border-radius: 2.25rem;
+    width: 100%;
+    max-width: 31.5rem;
+    padding: 3.5rem 3.75rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.28);
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.success-section[aria-hidden="false"] {
+    display: flex;
+}
+
+.success-icon {
+    margin-bottom: 2rem;
+}
+
+.success-icon img {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+}
+
+.success-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--blue-800);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+}
+
+.success-section p {
+    font-size: 1rem;
+    color: var(--blue-800);
+    margin-bottom: 2.25rem;
+}
+
+.success-section strong {
+    font-weight: 700;
+}
+
+@media (max-width: 40rem) {
+        .form-field {
+            gap: 0;
+        }
+        .email-input {
+            margin-bottom: 1.25rem;
+        }
+        .btn {
+            margin-top: 0.5rem;
+            border-radius: 0.5rem;
+        }
+    body {
+        background-color: var(--white);
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .signup-section {
+        flex-direction: column;
+        border-radius: 0;
+        box-shadow: none;
+        max-width: 100%;
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .illustration-panel {
+        display: none;
+    }
+
+    .illustration-mobile {
+        display: block;
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 0 0 1.5rem 1.5rem;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+    }
+
+    .illustration-mobile img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 0 0 1.5rem 1.5rem;
+    }
+
+    .content-panel {
+        padding: 2.25rem 1.5rem 3rem;
+        margin-top: 0;
+    }
+
+    .content-panel h1 {
+        font-size: 2rem;
+    }
+
+    .success-section {
+        border-radius: 0;
+        padding: 3rem 1.5rem 6rem;
+        max-width: 100%;
+        min-height: 100vh;
+        box-shadow: none;
+    }
+
+    .success-section .btn {
+        width: 100%;
+        border-radius: 0;
+        padding: 1.25rem;
+        margin-top: 10rem;
+        border-radius: 0.5rem;
+    }
+}

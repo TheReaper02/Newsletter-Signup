@@ -9,7 +9,7 @@ This project is a responsive newsletter sign-up form that validates user input a
 
 ## Screenshot
 
-![Project Screenshot](./assets/project-output.png)
+![Project Screenshot](.project-output.png)
 
 ## What I Did
 
